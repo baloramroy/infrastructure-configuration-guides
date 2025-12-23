@@ -25,13 +25,13 @@ Before starting, ensure:
 
 ## System Update
 
-- Update all packages
+- **Update all packages**
 
     ```bash
     sudo dnf update -y
     ```
 
-- Reboot if kernel is updated
+- **Reboot if kernel is updated**
 
     ```bash
     sudo reboot
@@ -41,45 +41,45 @@ Before starting, ensure:
 
 ## Install Apache Web Server
 
-- Install Apache package
+- **Install Apache package**
 
     ```bash
     sudo dnf install httpd -y
     ```
 
-- Start Apache service
+- **Start Apache service**
 
     ```bash
     sudo systemctl start httpd
     ```
 
-- Enable Apache at boot
+- **Enable Apache at boot**
 
     ```bash
     sudo systemctl enable httpd
     ```
 
-- Verify Apache status
+- **Verify Apache status**
 
     ```bash
     sudo systemctl status httpd
     ```
 
-- Expected result:\
+- **Expected result:**\
   Service status should be **active (running)**.
 
 ---
 
 ## Configure Firewall for Apache
 
-- Allow HTTP and HTTPS traffic
+- **Allow HTTP and HTTPS traffic**
 
     ```bash
     sudo firewall-cmd --permanent --add-service=http
     sudo firewall-cmd --permanent --add-service=https
     ```
 
-- Reload firewall rules
+- **Reload firewall rules**
 
     ```bash
     sudo firewall-cmd --reload
@@ -89,38 +89,38 @@ Before starting, ensure:
 
 ## Test Apache in browser
 
-- Open browser and access:
+- **Open browser and access:**
 
     ```text
     http://<server-ip>
     ```
 
-- Expected result:\
+- **Expected result:**\
   Apache default test page is displayed.
 
 ---
 
 ## Install MariaDB Database Server
 
-- Install MariaDB server
+- **Install MariaDB server**
 
     ```bash
     sudo dnf install mariadb-server -y
     ```
 
-- Start MariaDB service
+- **Start MariaDB service**
 
     ```bash
     sudo systemctl start mariadb
     ```
 
-- Enable MariaDB at boot
+- **Enable MariaDB at boot**
 
     ```bash
     sudo systemctl enable mariadb
     ```
 
-- Verify MariaDB status
+- **Verify MariaDB status**
 
     ```bash
     sudo systemctl status mariadb
@@ -130,44 +130,44 @@ Before starting, ensure:
 
 ## Secure MariaDB Installation
 
-Run security script
+- **Run security script**
+    
+    ```bash
+    sudo mysql_secure_installation
+    ```
+    
+- **Recommended answers**
 
-```bash
-sudo mysql_secure_installation
-```
-
-Recommended answers
-
-1. Set root password → **Y**
-2. Remove anonymous users → **Y**
-3. Disallow remote root login → **Y**
-4. Remove test database → **Y**
-5. Reload privilege tables → **Y**
+    1. Set root password → **Y**
+    2. Remove anonymous users → **Y**
+    3. Disallow remote root login → **Y**
+    4. Remove test database → **Y**
+    5. Reload privilege tables → **Y**
 
 ---
 
 ## Install PHP and Required Modules
 
-- Enable PHP module (if required)
+- **Enable PHP module (if required)**
 
     ```bash
     sudo dnf module reset php -y
     sudo dnf module enable php:8.1 -y
     ```
 
-- Install PHP and extensions
+- **Install PHP and extensions**
 
     ```bash
     sudo dnf install php php-mysqlnd php-cli php-common php-opcache php-gd php-curl php-zip -y
     ```
 
-- Verify PHP installation
+- **Verify PHP installation**
 
     ```bash
     php -v
     ```
 
-- Expected result:\
+- **Expected result:**\
   PHP version information is displayed.
 
 ---
@@ -182,13 +182,13 @@ sudo systemctl restart httpd
 
 ## Test PHP Integration
 
-- Create PHP test file
+- **Create PHP test file**
 
     ```bash
     sudo vi /var/www/html/info.php
     ```
 
-- Add the following content:
+- **Add the following content:**
 
     ```php
     <?php
@@ -202,44 +202,44 @@ sudo systemctl restart httpd
 
 ### Access PHP test page
 
-- Open browser:
+- **Open browser:**
 
     ```text
     http://<server-ip>/info.php
     ```
 
-- Expected result:\
+- **Expected result:**\
   PHP information page is displayed.
 
 ---
 
 ## Verify LAMP Stack Components
 
-Check services
+- **Check services**
 
-```bash
-systemctl status httpd
-systemctl status mariadb
-```
+    ```bash
+    systemctl status httpd
+    systemctl status mariadb
+    ```
 
-### Confirm stack components
-
-| Component | Status  |
-| --------- | ------- |
-| Linux     | Running |
-| Apache    | Active  |
-| MariaDB   | Active  |
-| PHP       | Working |
+- **Confirm stack components**
+    
+    | Component | Status  |
+    | --------- | ------- |
+    | Linux     | Running |
+    | Apache    | Active  |
+    | MariaDB   | Active  |
+    | PHP       | Working |
 
 ---
 
 ## Cleanup
 
-After testing, remove PHP info file:
-
-```bash
-sudo rm -f /var/www/html/info.php
-```
+- **After testing, remove PHP info file:**
+    
+    ```bash
+    sudo rm -f /var/www/html/info.php
+    ```
 
 ---
 
