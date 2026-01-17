@@ -2,101 +2,134 @@
 
 ## What is Nodemon?
 
-**Nodemon** is a development tool that automatically restarts your Node.js application when file changes are detected in the directory. The name comes from "Node Monitor".
+**Nodemon** is a development-time utility for **Node.js** that automatically restarts your application whenever source code changes are detected.
+
+It is mainly used during **development**, not in **production**.
+
+---
+
+## Why Nodemon is Used
+
+### Without Nodemon
+When you run a Node.js app normally:
+
+```bash
+node app.js
+```
+
+- You change code
+- App does **not** reload
+- You must stop and restart manually
+
+This slows down development.
+
+### With Nodemon:
+
+```bash
+nodemon app.js
+```
+
+- You change code
+- Nodemon detects file changes
+- App restarts automatically
+- Faster development cycle
 
 ---
 
 ## How It Works
 
-Instead of running your app with `node app.js`, you run it with `nodemon app.js`. Nodemon then:
-1. Starts your application
-2. Watches files in your project directory
-3. Automatically restarts the server when any watched file changes
-4. Shows restart notifications in the terminal
+1. Nodemon **watches your project files**
+2. When a file changes:
+   - It stops the running Node process
+   - Restarts it automatically
+3. Your app runs with the updated code
+
+✅Nodemon does **not** improve performance\
+✅It only improves **developer productivity**
 
 ---
 
-## Why We Use Nodemon
+## Installation
 
-### 1. **Automatic Restarts During Development**
-No more manually stopping and restarting your server after every code change. This saves significant time and eliminates repetitive actions.
+### Local (Recommended)
 
-#
-
-### 2. **Improved Development Workflow**
-- Without nodemon
-  ```bash
-  $ node server.js
-  ```
-  >Make a change → Ctrl+C → node server.js again
-
-- With nodemon
-  ```bash
-  $ nodemon server.js
-  ```
-  >Make a change → Server auto-restarts
-
-#
-
-### 3. **Flexible Configuration**
-You can configure what to watch/ignore:
-```json
-// package.json or nodemon.json
-{
-  "watch": ["src", "config"],
-  "ignore": ["tests/", "node_modules/"],
-  "ext": "js,json,ts"
-}
-```
-
-#
-
-### 4. **Supports Various File Types**
-Watches JavaScript, TypeScript, JSON files, and more by default.
-
-#
-
-### 5. **Easy to Install and Use**
 ```bash
-# Install globally or as dev dependency
-npm install -g nodemon
-# or
 npm install --save-dev nodemon
-
-# Usage
-nodemon server.js
 ```
+
+### Global (Optional)
+
+```bash
+npm install -g nodemon
+```
+
 ---
 
 ## Common Use Cases
-**When to use:** During coding on your local machine
+
+### When to use:
+
+**During coding on your local machine**
 - **API/Backend Development**: When building Express, Koa, or other Node.js servers
 - **Full-stack Applications**: During backend development phases
 - **Script Development**: When working on Node.js scripts that need frequent testing
 
+
+### When Not to Use Nodemon
+
+- In production servers
+- With PM2
+- For performance tuning
+- For long-running background jobs
+
 ---
 
-## Basic Configuration Example
+## Usage
 
-Create a `nodemon.json` file:
+### Basic
+
+```bash
+nodemon app.js
+```
+
+### With npm script
+
+Edit **package.json** file and input this
+
 ```json
 {
-  "watch": ["src"],
-  "ext": "js,ts,json",
-  "ignore": ["src/**/*.test.js"],
-  "exec": "node"
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  }
 }
+```
+
+Run:
+
+```bash
+npm run dev
 ```
 
 ---
 
-## Alternative in package.json scripts:
+## Common Nodemon Options
+
+```bash
+nodemon app.js --ext js,json
+nodemon app.js --ignore node_modules
+```
+
+**Using config file:**
+
+Edit **nodemon.json** file
+
 ```json
 {
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  }
+  "watch": ["src"],
+  "ext": "js,json",
+  "ignore": ["node_modules"],
+  "exec": "node app.js"
 }
 ```
 
