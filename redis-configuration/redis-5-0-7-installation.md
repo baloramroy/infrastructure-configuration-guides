@@ -185,8 +185,7 @@ make
 
 ---
 
-
-> Follow this step if error occurs but if we found no errors we can skip fixxing erro step.
+> Follow this step if **error occurs** but if we found **no errors** we can **skip fixxing erro** step and continue from **Run Test Suit** Step.
 
 ## Fix Multiple Definition Error (If Occurs)
 
@@ -253,7 +252,7 @@ This prevents multiple-definition linker errors.
 
 > Follow any of those step. Don't do both of it.
 
-> Either use `make CFLAGS="-fcommon"` this or **Source code Modification**.
+> Either use `make CFLAGS="-fcommon"` this or **Source code Modification** this.
 
 ---
 
