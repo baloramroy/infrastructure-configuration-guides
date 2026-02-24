@@ -185,7 +185,7 @@ make
 
 ---
 
-> Follow this step if **error occurs** but if we found **no errors** we can **skip fixxing erro** step and continue from **Run Test Suit** Step.
+> Follow this step if **error occurs** but if we found **no errors** we can **skip fixing error** step and continue from **Run Test Suit** Step.
 
 ## Fix Multiple Definition Error (If Occurs)
 
@@ -210,6 +210,8 @@ Note:
 - If we run `make CFLAGS="-fcommon"` command like this, it will bypass the **old defination error** during compilation.
 - Then there is no need to modify the **source code** like below.
 
+#
+
 ### Or, We can use **Source Code Modifications**
 
 #### First Modify this `src/sds.c`
@@ -232,7 +234,7 @@ Add correct definition:
 const size_t SDS_NOINIT = (size_t)-1;
 ```
 
-#
+
 
 #### Then Modify this `src/sds.h`
 
@@ -250,13 +252,15 @@ extern const size_t SDS_NOINIT;
 
 This prevents multiple-definition linker errors.
 
+#
+
 > Follow any of those step. Don't do both of it.
 
 > Either use `make CFLAGS="-fcommon"` this or **Source code Modification** this.
 
 ---
 
-## Clean and Rebuild After Fixxing Error
+## Clean and Rebuild After Fixing Error
 
 After making changes:
 
