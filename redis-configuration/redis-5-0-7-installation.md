@@ -169,9 +169,7 @@ chmod -R 775 redis-5.0.7
 
 ---
 
-## Compile Source Code and Fixxing Errors 
-
-### Build Redis to Executable Binaries 
+## Compile Redis Source Code
 
 Navigate into source directory:
 
@@ -179,13 +177,16 @@ Navigate into source directory:
 cd redis-5.0.7
 ```
 
-Compile Redis Source Code running following command 
+Build Redis Source Code to Executable Binaries 
 
 ```bash
 make
 ```
 
 ---
+
+
+> Follow this step if error occurs but if we found no errors we can skip fixxing erro step.
 
 ## Fix Multiple Definition Error (If Occurs)
 
@@ -200,7 +201,19 @@ collect2: error: ld returned 1 exit status
 
 #
 
-### Required Modifications `src/sds.c`
+### Either, We can run `make` command like below:
+
+Run make command with this flags:
+```bash
+make CFLAGS="-fcommon"
+```
+Note:
+- If we run `make CFLAGS="-fcommon"` command like this, it will bypass the **old defination error** during compilation.
+- Then there is no need to modify the **source code** like below.
+
+### Or, We can use **Source Code Modifications**
+
+#### First Modify this `src/sds.c`
 
 Run `vim src/sds.c` and find this line:
 
@@ -222,7 +235,7 @@ const size_t SDS_NOINIT = (size_t)-1;
 
 #
 
-### Then Modify `src/sds.h` File
+#### Then Modify this `src/sds.h`
 
 Run `vim src/sds.h` and find this line and comment out:
 
@@ -237,6 +250,10 @@ extern const size_t SDS_NOINIT;
 ```
 
 This prevents multiple-definition linker errors.
+
+> Follow any of those step. Don't do both of it.
+
+> Either use `make CFLAGS="-fcommon"` this or **Source code Modification**.
 
 ---
 
