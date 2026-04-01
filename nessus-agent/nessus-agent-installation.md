@@ -162,23 +162,8 @@ firewall-cmd --reload
 
 ---
 
-## 7. Troubleshooting
 
-If agent shows "Not linked":
-
-1. Verify linking key.
-2. Confirm manager IP/FQDN.
-3. Check network connectivity.
-4. Check firewall rules.
-5. Restart agent:
-
-```bash
-systemctl restart nessusagent
-```
-
----
-
-## 8. Rollback Procedure
+## 7. Rollback Procedure
 
 Stop service:
 
