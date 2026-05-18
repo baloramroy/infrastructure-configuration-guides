@@ -130,9 +130,21 @@ localhost
 
 If configured correctly, you should see SNMP output.
 
-
 --- 
 
+## Varify Log for SNMP Request
+
+Live Monitoring using JournalCTL
+```bash
+journalctl -u snmpd -f
+```
+
+Find logs in Message
+```bash
+grep snmp /var/log/messages
+```
+
+---
 
 # Recreate SNMP User
 
