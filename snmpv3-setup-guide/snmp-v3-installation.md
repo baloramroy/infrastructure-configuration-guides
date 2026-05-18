@@ -141,7 +141,7 @@ journalctl -u snmpd -f
 
 Find logs in Message
 ```bash
-grep snmp /var/log/messages
+tail -f /var/log/messages | grep snmp
 ```
 
 ---
