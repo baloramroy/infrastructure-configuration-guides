@@ -1,5 +1,5 @@
 
-# Java Learning Journey — Phase 1: Java Fundamentals
+# Java Learning Journey: Java Fundamentals
 
 ## Purpose
 

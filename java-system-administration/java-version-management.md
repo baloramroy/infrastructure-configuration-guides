@@ -1,4 +1,4 @@
-# Java Version Management in Linux
+# Java Learning Journey: Java Version Management in Linux
 
 
 ## 1. Purpose

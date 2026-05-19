@@ -1,4 +1,4 @@
-# **SOP: Understanding JVM, JRE, and JDK**
+# Java Learning Journey: Understanding JVM, JRE, and JDK
 
 ## Purpose
 
