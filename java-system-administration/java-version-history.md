@@ -21,19 +21,19 @@ This SOP focuses on:
 
 ## 2. The Biggest Java Confusion
 
-Almost every beginner gets confused by this:
+**Almost every beginner gets confused by this:**
 
 ```bash
 java -version
 ```
 
-Output:
+**Output:**
 
 ```text
 java version "1.8.0_381"
 ```
 
-But people say:
+**But people say:**
 
 ```text
 This is Java 8
@@ -48,7 +48,7 @@ This confusion exists because Java has:
 1. **Marketing** version names
 2. **Internal technical** version names
 
-And for many years:
+**And for many years:**
 
 ```text
 They were NOT the same.
@@ -56,11 +56,11 @@ They were NOT the same.
 
 ---
 
-# 3. The Early Days of Java (1995–2004)
+## 3. The Early Days of Java (1995–2004)
 
 Java was originally developed by:
 
-Sun Microsystems
+### `Sun Microsystems`
 
 In the beginning, versioning was simple.
 
@@ -72,9 +72,9 @@ In the beginning, versioning was simple.
 | Java 1.3    | 1.3              |
 | Java 1.4    | 1.4              |
 
-At this stage:
+**At this stage:**
 
-```text id="x7d42r"
+```text
 Marketing version = Internal version
 ```
 
@@ -82,34 +82,34 @@ Everything was straightforward.
 
 ---
 
-# 4. The Big Marketing Shift (2004)
+## 4. The Big Marketing Shift (2004)
 
 In 2004, Java released version:
 
-```text id="4fl7m0"
+```text
 1.5
 ```
 
-But this release was HUGE.
+But this release was **HUGE**.
 
-It introduced major features like:
+It introduced **major** features like:
 
 * Generics
 * Annotations
 * Enhanced for-loop
 * Autoboxing
 
-Sun Microsystems felt this version was a major milestone.
+**Sun Microsystems** felt this version was a **major milestone.**
 
-So instead of calling it:
+**So instead of calling it:**
 
-```text id="9x4yot"
+```text
 Java 1.5
 ```
 
-they marketed it as:
+**they marketed it as:**
 
-```text id="mo7l8r"
+```text
 Java 5
 ```
 
@@ -117,38 +117,32 @@ This is where the confusion started.
 
 ---
 
-# 5. The Legacy Compatibility Problem
+## 5. The Legacy Compatibility Problem
 
-Even though the public marketing name changed to:
+**Even though the public marketing name changed to:**
 
-```text id="eznq4t"
+```text
 Java 5
 ```
 
-internally the system still used:
+**internally the system still used:**
 
-```text id="u5v95v"
+```text
 1.5
 ```
 
-Why?
+**Why?**
 
-Because millions of existing applications already depended on internal version properties like:
+Because millions of **existing applications** already depended on **internal version** properties like:
 
-```text id="r3ylus"
+```text
 java.version
 ```
 
-If Sun suddenly changed everything from:
+**If Sun Microsystems suddenly changed everything from:**
 
-```text id="bpq4a6"
-1.5
-```
-
-to:
-
-```text id="8kh4k1"
-5
+```text
+1.5 -> 5
 ```
 
 many enterprise applications would break.
