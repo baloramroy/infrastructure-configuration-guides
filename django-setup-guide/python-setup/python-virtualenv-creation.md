@@ -1,73 +1,3 @@
-## Create a Virtual Environment for Windows
-
-Navigate to your project folder:
-
-```cmd
-cd D:\Project\Django Project
-```
-
-Create a virtual environment:
-
-```cmd
-python -m venv djangoenv
-```
-
-Activate it on cmd:
-
-```cmd
-djangoenv\Scripts\activate.bat
-```
-
-Activate it on Powershell:
-
-```cmd
-djangoenv\Scripts\activate.ps1
-```
-
-You should see `(djangoenv)` at the beginning of the prompt.
-```cmd
-(djangoenv) D:\Project\Django Project\>
-```
-
-Deactivate when finished:
-
-```cmd
-deactivate
-```
-
-
-## Create a Virtual Environment for Linux
-
-Navigate to your project folder:
-
-```cmd
-cd /home/web-project/django-project
-```
-
-Create a virtual environment:
-
-```cmd
-python -m venv djangoenv
-```
-
-Activate it:
-
-```cmd
-source djangoenv/bin/activate
-```
-
-You should see `(djangoenv)` at the beginning of the prompt.
-```cmd
-(djangoenv) /home/web-project/django-project>
-```
-
-Deactivate when finished:
-
-```cmd
-deactivate
-```
-
-
 # SOP - Creating and Managing a Python Virtual Environment
 
 ## Purpose
@@ -161,8 +91,7 @@ Open either:
   python -m venv djangoenv
   ```
 
-  **NOTE:** \
-  A new directory called `djangoenv` will be created in the current location.
+  > A new directory called `djangoenv` will be created in the current location.
 
 ### Activate the Virtual Environment
 
@@ -180,8 +109,7 @@ Open either:
   (djangoenv) /home/web-project/django-project$
   ```
 
-  **NOTE:** \
-  The `(djangoenv)` prefix confirms that the virtual environment is **active**.
+  > The `(djangoenv)` prefix confirms that the virtual environment is **active**.
 
 ### Deactivate the Virtual Environment
 
@@ -191,8 +119,7 @@ Open either:
   deactivate
   ```
 
-  **NOTE:** \
-  The `(djangoenv)` prefix will be **removed** from the **terminal prompt**.
+  > The `(djangoenv)` prefix will be **removed** from the **terminal prompt**.
 
 ---
 
@@ -208,7 +135,7 @@ Open either:
 
 ## Notes
 
-* Create the virtual environment only once per project.
-* Activate the virtual environment before installing Python packages or running Django commands.
-* While the virtual environment is active, packages installed with `pip` are isolated to that environment and do not affect the system-wide Python installation.
-* If `python` is not recognized on your system, you may need to use `python3` instead, particularly on many Linux distributions.
+* Create the **virtual environment** only **once per project**.
+* Activate the **virtual environment** before **installing Python packages** or **running Django** commands.
+* While the **virtual environment** is **active**, packages installed with `pip` are **isolated** to that **environment** and do not affect the **system-wide Python** installation.
+* If `python` is not **recognized** on your system, you may need to use `python3` instead, particularly on many **Linux distributions**.
