@@ -160,7 +160,43 @@ Close
 
 ---
 
-# Test Python
+## Upgrade pip
+
+- Run:
+
+  ```cmd
+  python -m pip install --upgrade pip
+  ```
+
+  **Note:** This ensures you have the latest package manager.
+
+---
+
+## Check PATH Configuration
+
+- Run:
+
+  ```cmd
+  where python
+  ```
+
+- You should see output similar to:
+
+  ```text
+  # C:\Program Files\Python314\python.exe 
+  # C:\Users\<YourUser>\AppData\Local\Programs\Python\Python314\python.exe
+  ```
+
+- Also verify pip:
+
+  ```cmd
+  where pip
+  ```
+
+---
+
+
+## Test Python by Run Hellow World
 
 - Run this in `cmd`:
 
@@ -202,42 +238,7 @@ Close
 
 ---
 
-## Check PATH Configuration
-
-- Run:
-
-  ```cmd
-  where python
-  ```
-
-- You should see output similar to:
-
-  ```text
-  # C:\Program Files\Python314\python.exe 
-  # C:\Users\<YourUser>\AppData\Local\Programs\Python\Python314\python.exe
-  ```
-
-- Also verify pip:
-
-  ```cmd
-  where pip
-  ```
-
----
-
-## Upgrade pip
-
-- Run:
-
-  ```cmd
-  python -m pip install --upgrade pip
-  ```
-
-  **Note:** This ensures you have the latest package manager.
-
----
-
-## Create a Test Project
+## Create a Test Project to Check
 
 - Create a folder:
 
