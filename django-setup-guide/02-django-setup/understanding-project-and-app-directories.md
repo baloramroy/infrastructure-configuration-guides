@@ -193,6 +193,11 @@ An ASGI (**Asynchronous Server Gateway Interface**) server acts as the bridge be
 
   >For many basic projects, this file requires no changes.
 
+
+### wsgi vs asgi
+
+![wsgi vs asgi](../django-images/asgi-wsgi.png)
+
 ---
 
 ## 2. Django App Structure
