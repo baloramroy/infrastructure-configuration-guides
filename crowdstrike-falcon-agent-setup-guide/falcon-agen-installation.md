@@ -1,11 +1,9 @@
+**Standard Operating Procedure (SOP)**\
 Below is a production-ready SOP for installing the CrowdStrike Falcon Sensor on **RHEL 9**.
 
 ---
 
-**Standard Operating Procedure (SOP)**
-
 # CrowdStrike Falcon Sensor Installation on RHEL 9
-
 
 ## Document Information
 
